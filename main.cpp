@@ -13,29 +13,29 @@ int main()
     cout << "Enter an amount in cents  ";
     cin >> amount;
 
-    cout << "\n\t\tSolving by using Division Expression" << endl;
-
     int dollar{}, quarter{}, dime {}, nickel{}, pennies{}, balance{};
 
     dollar = amount / dollar_value;
-    balance = amount - (dollar * dollar_value);
+    balance = amount % dollar_value;
 
     quarter = balance / quarter_value;
-    balance = balance - (quarter * quarter_value);
+    balance %= quarter_value;
 
     dime = balance / dime_value;
-    balance -= (dime * dime_value);
+    balance %= dime_value;
 
     nickel = balance / nickel_value;
-    balance -= (nickel * nickel_value);
+    balance %= nickel_value;
 
     pennies = balance;
 
-    cout << "Dollar:  " << dollar
-        << "\nQuarter: " << quarter
-        << "\nDime:    " << dime
-        << "\nNickel:  " << nickel
-        << "\nPennies: " << pennies
+    cout << "Dollar:   " << dollar
+        << "\nQuarter:  " << quarter
+        << "\nDime:     " << dime
+        << "\nNickel:   " << nickel
+        << "\nPennies:  " << pennies
         << endl;
+
+
     return 0;
 }
